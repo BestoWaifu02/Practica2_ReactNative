@@ -12,13 +12,13 @@ export default function Form({ setNum1, setNum2 }) {
           style={styles.input}
           onChange={(e) => setNum1(e.nativeEvent.text)}
         ></TextInput>
+        <TextInput
+          placeholder="Numero 2"
+          keyboardType="numeric"
+          style={[styles.input, styles.input2]}
+          onChange={(e) => setNum2(e.nativeEvent.text)}
+        ></TextInput>
       </View>
-      <TextInput
-        placeholder="Numero 2"
-        keyboardType="numeric"
-        style={[styles.input, styles.input2]}
-        onChange={(e) => setNum2(e.nativeEvent.text)}
-      ></TextInput>
     </View>
   );
 }

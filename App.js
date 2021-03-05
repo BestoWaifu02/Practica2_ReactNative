@@ -54,25 +54,29 @@ export default function App() {
           setMulti(parseInt(num1) * parseInt(num2));
         }}
       ></Button>
-      <Text> </Text>
-      <Text>
-        {" "}
-        {suma == null ? "Aqui va la suma" : `Resultado de la suma ${suma}`}
-      </Text>
-      <Text>
-        {" "}
-        {resta == null ? "Aqui va la resta" : `Resultado de la resta ${resta}`}
-      </Text>
-      <Text>
-        {" "}
-        {multi == null
-          ? "Aqui va la multiplicacion"
-          : `Resultado de la multipliacion ${multi}`}
-      </Text>
-      <Text>
-        {" "}
-        {divi == null ? "Aqui va la division" : `Resultado de la divi ${divi}`}
-      </Text>
+      <SafeAreaView style={styles.safeResultArea}>
+        <Text style={styles.text}>
+          {suma == null ? "Aqui va la suma" : `Resultado de la suma ${suma}`}
+        </Text>
+        <Text style={styles.text}>
+          {resta == null
+            ? "Aqui va la resta"
+            : `Resultado de la resta ${resta}`}
+        </Text>
+        <Text style={styles.text}>
+          {multi == null
+            ? "Aqui va la multiplicacion"
+            : `Resultado de la multipliacion ${multi}`}
+        </Text>
+        <Text style={styles.text}>
+          {divi == null
+            ? "Aqui va la division"
+            : `Resultado de la division ${divi}`}
+        </Text>
+        <Text style={[styles.text, styles.marginBottom]}>
+          Diego Robledo Mendoza && Luis Andree Jimenez Bernal
+        </Text>
+      </SafeAreaView>
     </>
   );
 }
@@ -95,5 +99,23 @@ const styles = StyleSheet.create({
   button: {
     marginBottom: 50,
     display: "block",
+  },
+  text: {
+    textAlign: "center",
+    backgroundColor: "",
+    fontWeight: "bold",
+    fontSize: 18,
+    marginBottom: 3,
+  },
+  safeResultArea: {
+    backgroundColor: colors.PRIMARY_COLOR,
+    height: 200,
+    borderRadius: 30,
+    alignItems: "center",
+    paddingTop: 20,
+    marginTop: 50,
+  },
+  marginBottom: {
+    marginBottom: 20,
   },
 });
